@@ -369,3 +369,27 @@ body.dark-mode #header h1 {
 .rules-postit a:hover {
     text-decoration: underline;
 }
+.banner {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-size: 18px;
+}
+
+#close-banner {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#close-banner:hover {
+  background-color: darkred;
+}
