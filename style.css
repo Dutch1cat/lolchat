@@ -1,0 +1,331 @@
+/* Stile per la sezione di login/registrazione */
+body {
+    background-color: #2f3136; /* Grigio scuro, simile alla dark mode di Discord */
+    font-family: Arial, sans-serif;
+    color: #b9bbbe; /* Testo chiaro, per contrastare con lo sfondo scuro */
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenitore di login/registrazione */
+#auth-container {
+    text-align: center;
+    margin-top: 100px;
+    color: #fff; /* Testo bianco per la sezione di login/registrazione */
+}
+
+#auth-container input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1.2em;
+    width: 250px;
+    border: 1px solid #444;
+    background-color: #3e4248; /* Sfondo scuro per gli input */
+    color: #fff; /* Testo chiaro negli input */
+    border-radius: 5px;
+}
+
+#auth-container button {
+    background-color: #7289da; /* Blu Discord */
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 250px;
+    border-radius: 5px;
+}
+
+#auth-container button:hover {
+    background-color: #5b6e8e; /* Blu scuro per hover */
+}
+
+/* Contenitore principale dell'app */
+#app-container {
+    display: none;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #2f3136; /* Grigio scuro per l'intero sfondo */
+    color: #b9bbbe; /* Testo chiaro */
+    min-height: 100vh; /* Occupa tutta l'altezza della pagina */
+    position: relative;
+}
+
+/* Header: Titolo e logout a destra */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #fff; /* Colore bianco per il titolo */
+}
+
+#header button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #7289da; /* Blu Discord */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#header button:hover {
+    background-color: #5b6e8e;
+}
+
+/* Form per inviare un nuovo post a sinistra */
+form {
+    background-color: #3e4248; /* Sfondo scuro per il form */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    position: fixed;
+    left: 20px;
+    top: 200px;
+    z-index: 10;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #444;
+    background-color: #3e4248;
+    color: #fff; /* Testo chiaro */
+    border-radius: 5px;
+}
+
+textarea {
+    min-height: 150px;
+    max-height: 300px;
+    resize: none;
+    width: 100%;
+}
+
+/* Sezione dei post centrata */
+#posts {
+    margin-top: 30px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    z-index: 1;
+}
+
+/* Modifica l'aspetto dei post */
+#posts div {
+    background-color: #3e4248; /* Sfondo scuro per i post */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    text-align: left;
+    color: #b9bbbe; /* Testo chiaro per i post */
+    opacity: 0;
+    animation: slideIn 0.5s forwards, fadeIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Modifica i pulsanti */
+button {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #7289da; /* Blu Discord */
+    color: white;
+}
+
+button:hover {
+    background-color: #5b6e8e;
+}
+
+/* Pulsante per eliminare i post */
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+}
+/* Stile per il pulsante di cambio tema */
+#header button:nth-child(2) { /* il secondo pulsante è quello per il tema */
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #b9bbbe; /* Colore del testo del pulsante */
+}
+
+#header button:nth-child(2):hover {
+    color: #7289da; /* Colore per hover */
+}
+
+/* Modalità Light */
+/* Modalità Light */
+body.light-mode {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+body.light-mode #auth-container {
+    color: #333;
+}
+
+body.light-mode #app-container {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-mode #header {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-mode #header button {
+    color: #333;
+    background-color: #ddd;
+}
+
+body.light-mode #header button:hover {
+    background-color: #bbb;
+}
+
+body.light-mode form {
+    background-color: #fff;
+    color: #333;
+}
+
+body.light-mode #posts div {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Modifica gli input e textarea per la modalità Light */
+body.light-mode input,
+body.light-mode textarea {
+    background-color: #fff; /* Sfondo bianco */
+    color: #333; /* Testo scuro */
+    border: 1px solid #ccc; /* Bordo chiaro */
+}
+
+/* Modalità Dark */
+body.dark-mode {
+    background-color: #2f3136;
+    color: #b9bbbe;
+}
+
+body.dark-mode #auth-container {
+    color: #fff;
+}
+
+body.dark-mode #app-container {
+    background-color: #2f3136;
+}
+
+body.dark-mode #header {
+    background-color: #2f3136;
+    color: #fff;
+}
+
+body.dark-mode #header button {
+    background-color: transparent;
+    color: #b9bbbe;
+}
+
+body.dark-mode #header button:hover {
+    color: #7289da;
+}
+
+body.dark-mode form {
+    background-color: #3e4248;
+    color: #fff;
+}
+
+body.dark-mode #posts div {
+    background-color: #3e4248;
+    color: #b9bbbe;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Aggiunta: Cambiare il colore della scritta "Post Interattivi" in base alla modalità */
+body.light-mode #header h1 {
+    color: #333; /* Scuro per la light mode */
+}
+
+body.dark-mode #header h1 {
+    color: #fff; /* Bianco per la dark mode */
+}
+.postit {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffeb3b;
+    color: #333;
+    padding: 15px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.postit button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.postit button:hover {
+    background-color: #e68900;
+}

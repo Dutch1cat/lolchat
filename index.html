@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Interattivi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sezione Login/Registrazione -->
+    <div id="auth-container">
+        <h1>Benvenuto!</h1>
+        <div id="login-form">
+            <input type="text" id="login-username" placeholder="Nome utente" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <input type="text" id="admin-id" placeholder="ID Admin (se necessario)" required> <!-- Nuovo input per ID admin -->
+            <button onclick="login()">Accedi</button>
+            <p>Non hai un account? <a href="#" onclick="showSignUp()">Registrati</a></p>
+        </div>
+        
+        <div id="signup-form" style="display: none;">
+            <input type="text" id="signup-username" placeholder="Nome utente" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button onclick="signUp()">Registrati</button>
+            <p>Hai già un account? <a href="#" onclick="showLogin()">Accedi</a></p>
+        </div>
+    </div>
+
+    <!-- Sezione Post (Nascosta fino al login) -->
+    
+
+    <div id="app-container" style="display: none;">
+        <div id="header">
+            <h1>lolchat</h1>
+            <p id="user-info"></p>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Sezione per eliminare tutti i post (solo admin) -->
+        <div id="delete-all-container" style="display:none;">
+            <button id="delete-all">Elimina tutti i post</button>
+        </div>
+
+        <!-- Form per inviare un nuovo post (a sinistra) -->
+        <form id="post-form">
+            <input type="text" id="name" placeholder="Nome" readonly />
+            <textarea id="content" placeholder="Scrivi il tuo messaggio..." required></textarea>
+            <button type="submit">Invia</button>
+        </form>
+        <div class="postit">
+            <strong>📌 Come inviare un'immagine?</strong>
+            <p>Vai su PostImage, carica il file e copia il link diretto.</p>
+            <button onclick="window.open('https://postimages.org', '_blank')">Vai su PostImage</button>
+        </div>
+        
+
+        <!-- Sezione dei post (al centro) -->
+        <div id="posts"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
