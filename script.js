@@ -186,5 +186,9 @@ function postMessage() {
     postContainer.prepend(newPost);
     document.getElementById("postContent").value = "";
 }
+document.getElementById("close-banner").addEventListener("click", function() {
+  document.getElementById("welcome-banner").style.display = "none";
+});
+
 // Carica i post all'avvio
 renderPosts();
