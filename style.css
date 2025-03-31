@@ -329,3 +329,43 @@ body.dark-mode #header h1 {
 .postit button:hover {
     background-color: #e68900;
 }
+.rules-postit {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffd966;
+    color: #333;
+    padding: 15px;
+    width: 250px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg);
+}
+
+.rules-postit h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.rules-postit ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rules-postit li {
+    margin-bottom: 5px;
+}
+
+.rules-postit a {
+    color: #0066cc;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rules-postit a:hover {
+    text-decoration: underline;
+}
